@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">bm-invest</string>
+    <string name="app_name_korean">BM투자</string>
+
+    <string name="leading_off">추천 리딩 신호 OFF</string>
+    <string name="leading_on">추천 리딩 신호 ON</string>
+
+    <string name="MAX">MAX</string>
+</resources>

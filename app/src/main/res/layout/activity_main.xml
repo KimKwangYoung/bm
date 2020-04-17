@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/header_bg">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="13.5sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:fontFamily="@font/nanumgothicextrabold"
+            android:text="@string/app_name_korean"/>
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="17.5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:adjustViewBounds="true"
+            android:layout_marginEnd="14.5dp"
+            android:src="@drawable/menu"/>
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/header_2_bg"
+                android:orientation="vertical">
+                <!-- 투자 선택 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/one_minute_on" />
+
+                    <ImageView
+                        android:layout_width="106dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/two_minute_off" />
+                </LinearLayout>
+                <!-- 리딩 신호 상태 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/leading_status_background"
+                    android:orientation="horizontal"
+                    android:padding="7dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/leading_icon_off" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="@string/leading_off"
+                        android:textColor="@color/white"
+                        android:textSize="12.5sp" />
+
+                    <ImageView
+                        android:layout_width="16.5dp"
+                        android:layout_height="2.5dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="151dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/invalid_name" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 그래프 -->
+            <WebView
+                android:layout_width="335.5dp"
+                android:layout_height="208.5dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="6.5dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="18.5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="11.5dp"
+                    android:layout_height="15.5dp"
+                    android:src="@drawable/cash_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6.5dp"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:text="내 투자금"
+                    android:textColor="@color/black"
+                    android:textSize="14.8sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:fontFamily="@font/nanumgothic"
+                android:text="Investment"
+                android:textColor="#bd9766"
+                android:textSize="11sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:text="50,000"
+                    android:textColor="@color/black"
+                    android:textSize="14.8sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16.5dp"
+                    android:text="won"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:layout_marginTop="20.5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2.5dp"
+                android:fontFamily="@font/nanumgothicextrabold"
+                android:text="1분 거래"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <!-- 투자 타이머 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/invest_timer_background"
+                android:orientation="horizontal"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="남은시간"
+                        android:textColor="@color/white"
+                        android:textSize="9.8sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="01:00"
+                        android:textColor="@color/white"
+                        android:textSize="19.8sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:background="#d0d8db" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="다음 계약 시간"
+                        android:textColor="@color/white"
+                        android:textSize="9.8sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12시26분"
+                        android:textColor="@color/white"
+                        android:textSize="19.8sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 매수 / 매도 버튼 영역 -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="31dp"
+                android:background="#d9b886" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="5,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="5,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/buying_color"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/selling_color"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="10,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="10,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/buying_color"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/selling_color"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="50,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="50,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/buying_color"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/selling_color"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="100,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_fill_background"
+                    android:fontFamily="@font/nanumgothic"
+                    android:gravity="center"
+                    android:paddingTop="8.5dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="100,000(0)"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:layout_marginEnd="74.5dp"
+                    android:background="@drawable/buying_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/buying_color"
+                    android:textSize="12.5sp" />
+
+                <TextView
+                    android:layout_width="106.5dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/selling_button_outline_background"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"
+                    android:paddingStart="25dp"
+                    android:paddingTop="8.5dp"
+                    android:paddingEnd="25dp"
+                    android:paddingBottom="8.5dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/selling_color"
+                    android:textSize="12.5sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothicextrabold"
+                        android:text="0"
+                        android:textColor="@color/buying_color"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="won"
+                        android:textColor="@color/buying_color"
+                        android:textSize="12.2sp"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothicextrabold"
+                        android:text="0"
+                        android:textColor="@color/selling_color"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumgothic"
+                        android:text="won"
+                        android:textColor="@color/selling_color"
+                        android:textSize="12.2sp"
+                        android:layout_marginEnd="20dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="12.5dp">
+                <TextView
+                    android:layout_width="162.5dp"
+                    android:layout_height="31dp"
+                    android:text="매수신청"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:background="@drawable/buying_button_fill_background"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="162.5dp"
+                    android:layout_height="31dp"
+                    android:text="초기화"
+                    android:textColor="@color/buying_color"
+                    android:textSize="12.5sp"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:background="@drawable/buying_button_outline_background"
+                    android:gravity="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="13.5dp">
+                <TextView
+                    android:layout_width="162.5dp"
+                    android:layout_height="31dp"
+                    android:text="매도신청"
+                    android:textColor="@color/white"
+                    android:textSize="12.5sp"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:background="@drawable/selling_button_fill_background"
+                    android:gravity="center"
+                    android:layout_marginEnd="10dp"/>
+                <TextView
+                    android:layout_width="162.5dp"
+                    android:layout_height="31dp"
+                    android:text="@string/MAX"
+                    android:textColor="@color/selling_color"
+                    android:textSize="12.5sp"
+                    android:fontFamily="@font/nanumgothicextrabold"
+                    android:background="@drawable/selling_button_outline_background"
+                    android:gravity="center" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="13dp"
+                android:src="@drawable/line"
+                android:layout_marginTop="40dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="종목 GBP/AUD"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanumgothicextrabold"
+                android:layout_marginTop="2.5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="23.5dp"
+                android:layout_marginBottom="6.5dp"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="진행시간"
+                    android:textSize="10.5sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="시가"
+                    android:textSize="10.5sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="진행사항"
+                    android:textSize="10.5sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="결과"
+                    android:textSize="10.5sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nanumgothicbold"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9b886" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_realtime_investment_history_recyclerview"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="39.5dp"
+                android:src="@drawable/history"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
